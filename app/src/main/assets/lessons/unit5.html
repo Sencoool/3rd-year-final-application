@@ -8,20 +8,134 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h2>คำสั่งควบคุมในภาษา JavaScript</h2>
-<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data Types ในภาษา JavaScript ข้อมูลที่เราใช้ในการเขียนโปรแกรมจะมีประเภท (Type) กำหนดไว้
-    เพื่อให้คอมพิวเตอร์รู้ว่าจะจัดการกับข้อมูลเหล่านั้นอย่างไร ลองนึกภาพว่าชนิดข้อมูลเหมือนกับป้ายที่บอกว่าของในกล่องนี้คืออะไร
-    จะได้เปิดและใช้งานได้ถูกวิธี JavaScript เป็นภาษาที่มีชนิดข้อมูลแบบ Dynamic Typing หมายความว่าคุณไม่ต้องประกาศ
-    ชนิดข้อมูลของตัวแปรล่วงหน้า ตอนที่คุณใส่ค่าอะไรลงไปในตัวแปร JavaScript จะพิจารณาชนิดข้อมูลของค่านั้นเอง
+<h2>ฟังก์ชั่นในภาษา JavaScript</h2>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ฟังก์ชัน (Function) คือ ชุดคำสั่งที่สามารถเรียกใช้ซ้ำได้ เพื่อช่วยให้โค้ดสั้นลง และง่ายต่อการจัดการ
     <br></p>
-<h3>1. Integer <br></h3>
+<h3>1. การสร้างฟังก์ชันใน JavaScript</h3>
+<p>ใน JavaScript เราสามารถสร้างฟังก์ชันได้หลายแบบ เช่น</p>
+<p>1.1 ฟังก์ชันแบบปกติ (Function Declaration)</p>
+<p>ฟังก์ชันที่สามารถเรียกใช้งานได้ก่อนที่เราจะประกาศฟังก์ชัน</p>
 <div>
     <code>
-        Hello <br>
-        World
+        function sayHello() { <br>
+        console.log("Hello, World!"); <br>
+        } <br><br>
+
+        sayHello(); // เรียกใช้ฟังก์ชัน
     </code>
 </div>
 
+<p>1.2 ฟังก์ชันแบบนิพจน์ (Function Expression)</p>
+<p>ฟังก์ชันที่ถูกเก็บไว้ในตัวแปร</p>
+<div>
+    <code>
+        const sayHi = function () { <br>
+        console.log("Hi there!");<br>
+        }; <br><br>
+
+        sayHi();
+    </code>
+</div>
+
+<p>1.3 ฟังก์ชันลูกศร (Arrow Function - ES6)</p>
+<p>เขียนโค้ดให้สั้นลง โดยใช้ => แทน function</p>
+<div>
+    <code>
+        const add = (a, b) => a + b; <br><br>
+
+        console.log(add(5, 3)); // 8
+    </code>
+</div>
+
+<h3>2. ฟังก์ชันที่มีพารามิเตอร์และค่าที่ส่งกลับ (Return Value)</h3>
+<p>2.1 ฟังก์ชันที่รับพารามิเตอร์</p>
+<div>
+    <code>
+        function greet(name) { <br>
+        console.log("Hello, " + name); <br>
+        } <br><br>
+
+        greet("Mart"); // Hello, Mart
+    </code>
+</div>
+
+<p>2.2 ฟังก์ชันที่มี return</p>
+<div>
+    <code>
+        function multiply(a, b) { <br>
+        return a * b; <br>
+        } <br><br>
+
+        let result = multiply(4, 5); <br>
+        console.log(result); // 20
+    </code>
+</div>
+
+<h3>3. ค่าพารามิเตอร์เริ่มต้น (Default Parameters - ES6)</h3>
+<p>สามารถกำหนดค่าเริ่มต้นให้กับพารามิเตอร์ได้</p>
+<div>
+    <code>
+        function greet(name = "Guest") { <br>
+        console.log("Hello, " + name); <br>
+        } <br><br>
+
+        greet(); // Hello, Guest <br>
+        greet("Mart"); // Hello, Mart
+    </code>
+</div>
+
+<h3>4. ฟังก์ชันที่รับจำนวนพารามิเตอร์ไม่จำกัด (Rest Parameters)</h3>
+<p>ใช้ ... เพื่อรวมค่าพารามิเตอร์หลายค่าเป็น Array</p>
+<div>
+    <code>
+        function sum(...numbers) { <br>
+        return numbers.reduce((total, num) => total + num, 0); <br>
+        } <br><br>
+
+        console.log(sum(1, 2, 3, 4)); // 10
+    </code>
+</div>
+
+<h3>5. ฟังก์ชันภายในฟังก์ชัน (Nested Function)</h3>
+<p>สามารถสร้างฟังก์ชันซ้อนกันได้</p>
+<div>
+    <code>
+        function outer() { <br>
+        console.log("This is the outer function"); <br><br>
+
+        function inner() {<br>
+        console.log("This is the inner function"); <br>
+        }<br><br>
+
+        inner(); // เรียกใช้ฟังก์ชันที่อยู่ภายใน <br>
+        } <br><br>
+
+        outer();
+    </code>
+</div>
+
+<h3>6. ฟังก์ชันแบบ Callback (Callback Function)</h3>
+<p>ฟังก์ชันที่ถูกส่งเป็นพารามิเตอร์ไปยังฟังก์ชันอื่น</p>
+<div>
+    <code>
+        function processUserInput(callback) { <br>
+        let name = "Mart";<br>
+        callback(name);<br>
+        }<br><br>
+
+        processUserInput((name) => console.log("Hello, " + name));
+    </code>
+</div>
+
+<h3>7. ฟังก์ชันแบบ IIFE (Immediately Invoked Function Expression)</h3>
+<p>ฟังก์ชันที่ถูกเรียกใช้งานทันทีหลังจากที่ถูกประกาศ</p>
+<div>
+    <code>
+        (function () { <br>
+        console.log("IIFE Function ถูกเรียกใช้งานทันที!"); <br>
+        })();
+    </code>
+</div>
 
 </body>
 </html>

@@ -8,20 +8,147 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h2>คำสั่งควบคุมในภาษา JavaScript</h2>
-<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Control Statements ในภาษา JavaScript คำสั่งควบคุมใน JavaScript ใช้สำหรับ กำหนดลำดับการทำงานของโปรแกรม สามารถแบ่งออกเป็น 3 ประเภท
+    <h2>คำสั่งควบคุมในภาษา JavaScript</h2>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Control Statements ในภาษา JavaScript คำสั่งควบคุมใน JavaScript ใช้สำหรับ กำหนดลำดับการทำงานของโปรแกรม สามารถแบ่งออกเป็น 3 ประเภท
     1.คำสั่งเงื่อนไข (Conditional Statements)
     2.คำสั่งวนซ้ำ (Loop Statements)
     3.คำสั่งควบคุมการทำงานของลูป (Loop Control Statements)
-    <br></p>
-<h3>1. Integer <br></h3>
-<div>
-    <code>
-        Hello <br>
-        World
-    </code>
-</div>
+        <br></p>
+    <h3>1. คำสั่งเงื่อนไข (Conditional Statements)</h3>
+        <p>1.1 if / else if / else</p>
+        <p>ใช้ตรวจสอบเงื่อนไข และเลือกทำงานตามเงื่อนไขที่เป็นจริง</p>
+    <div>
+        <code>
+            let score = 75; <br>
+            if (score >= 80) { <br>
+            console.log("คุณได้เกรด A"); <br>
+            } else if (score >= 70) { <br>
+            console.log("คุณได้เกรด B"); <br>
+            } else { <br>
+            console.log("คุณได้เกรด C หรือต่ำกว่า"); <br>
+            }
+        </code>
+    </div>
 
+    <p> 1.2 Ternary Operator (? :)</p>
+    <p>เป็นรูปแบบย่อของ if-else ใช้เขียนเงื่อนไขสั้น ๆ</p>
+    <div>
+        <code>
+            let age = 18; <br>
+            let status = (age >= 18) ? "ผู้ใหญ่" : "เด็ก"; <br>
+            console.log(status); // ผู้ใหญ่
+        </code>
+    </div>
 
+    <p>1.3 switch (ใช้แทน if-else หลายเงื่อนไข)</p>
+    <p>ใช้ตรวจสอบค่าของตัวแปรกับหลายเงื่อนไข</p>
+    <div>
+        <code>
+            let day = "Monday"; <br><br>
+
+            switch (day) { <br>
+            case "Monday": <br>
+            console.log("วันนี้วันจันทร์"); <br>
+            break; <br>
+            case "Tuesday": <br>
+            console.log("วันนี้วันอังคาร"); <br>
+            break; <br>
+            default: <br>
+            console.log("วันนี้ไม่ใช่วันจันทร์หรืออังคาร"); <br>
+            }
+        </code>
+    </div>
+
+    <h3>2. คำสั่งวนซ้ำ (Loop Statements)</h3>
+    <p>ใช้ให้โค้ดทำงานซ้ำ ๆ จนกว่าจะเป็นไปตามเงื่อนไขที่กำหนด</p>
+    <p>2.1 for loop (ใช้เมื่อรู้จำนวนรอบแน่นอน)</p>
+    <div>
+        <code>
+            for (let i = 1; i <= 5; i++) { <br>
+            console.log("รอบที่: " + i); <br>
+            }
+        </code>
+    </div>
+
+    <p> 2.2 while loop (ใช้เมื่อไม่รู้จำนวนรอบแน่นอน)</p>
+    <div>
+        <code>
+            let count = 1; <br>
+            while (count <= 5) { <br>
+            console.log("รอบที่: " + count); <br>
+            count++;
+            }
+        </code>
+    </div>
+    <p>2.3 do...while loop (ทำงานก่อนเช็คเงื่อนไขเสมอ)</p>
+    <div>
+        <code>
+            let num = 1; <br>
+            do { <br>
+            console.log("ค่าปัจจุบัน: " + num); <br>
+            num++; <br>
+            } while (num <= 5);
+        </code>
+    </div>
+    <p>2.4 for...in (ใช้วนลูปผ่าน properties ของ Object)</p>
+    <div>
+        <code>
+            let person = { name: "Mart", age: 25, city: "Bangkok" }; <br><br>
+
+            for (let key in person) { <br>
+            console.log(key + ": " + person[key]); <br>
+            }
+        </code>
+    </div>
+
+    <p>2.5 for...of (ใช้วนลูปผ่านค่าของ Array หรือ iterable object)</p>
+    <div>
+        <code>
+            let numbers = [10, 20, 30]; <br><br>
+
+            for (let num of numbers) { <br>
+            console.log(num); <br>
+            }
+        </code>
+    </div>
+
+    <h3>3. คำสั่งควบคุมการทำงานของลูป (Loop Control Statements)</h3>
+    <p>ใช้สำหรับควบคุมการทำงานของลูป</p>
+    <p>3.1 break (ใช้หยุดลูปทันที)</p>
+    <div>
+        <code>
+            for (let i = 1; i <= 5; i++) { <br>
+            if (i === 3) break; <br>
+            console.log(i); <br>
+            } <br>
+            // output: 1, 2
+        </code>
+    </div>
+    <p>3.2 continue (ใช้ข้ามรอบปัจจุบัน แล้วไปทำรอบถัดไป)</p>
+    <div>
+        <code>
+            for (let i = 1; i <= 5; i++) { <br>
+            if (i === 3) continue; <br>
+            console.log(i); <br>
+            } <br>
+            // output: 1, 2, 4, 5 <br>
+            }
+        </code>
+    </div>
+
+    <h3>4. คำสั่งจัดการข้อผิดพลาด (try...catch)</h3>
+    <p>ใช้สำหรับ จัดการข้อผิดพลาด (Error Handling) ที่อาจเกิดขึ้นในโปรแกรม</p>
+    <div>
+        <code>
+            try { <br>
+            let result = 10 / 0; <br>
+            console.log(result); <br>
+            } catch (error) { <br>
+            console.log("เกิดข้อผิดพลาด: " + error.message); <br>
+            } finally { <br>
+            console.log("โค้ดนี้ทำงานเสมอ"); <br>
+            }
+        </code>
+    </div>
 </body>
 </html>

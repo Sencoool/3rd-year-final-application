@@ -15,8 +15,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class activity_sum_score_unit4 extends AppCompatActivity implements View.OnClickListener {
     Button btnRetest4;
-    TextView scoreView4, textExcellent, textGood, textBad;
-    ImageButton imageExcellent, imageGood, imageBad;
+    TextView scoreView4, textExcellent4, textGood4, textBad4;
+    ImageButton imageExcellent4, imageGood4, imageBad4;
     String resultText = "";
 
     @Override
@@ -32,12 +32,12 @@ public class activity_sum_score_unit4 extends AppCompatActivity implements View.
 
         btnRetest4 = findViewById(R.id.btnRetest4);
         scoreView4 = findViewById(R.id.scoreView4);
-        textBad = findViewById(R.id.textBad4);
-        textGood = findViewById(R.id.textGood4);
-        textExcellent = findViewById(R.id.textExcellent4);
-        imageExcellent = findViewById(R.id.imageExcellent4);
-        imageGood = findViewById(R.id.imageGood4);
-        imageBad = findViewById(R.id.imageBad4);
+        textBad4 = findViewById(R.id.textBad4);
+        textGood4 = findViewById(R.id.textGood4);
+        textExcellent4 = findViewById(R.id.textExcellent4);
+        imageExcellent4 = findViewById(R.id.imageExcellent4);
+        imageGood4 = findViewById(R.id.imageGood4);
+        imageBad4 = findViewById(R.id.imageBad4);
         btnRetest4.setOnClickListener(this);
 
         showScore();
@@ -50,14 +50,14 @@ public class activity_sum_score_unit4 extends AppCompatActivity implements View.
         resultText = finalScore + "/" + totalQuestion;
         scoreView4.setText(resultText);
         if (finalScore > 9) {
-            textExcellent.setVisibility(View.VISIBLE);
-            imageExcellent.setVisibility(View.VISIBLE);
+            textExcellent4.setVisibility(View.VISIBLE);
+            imageExcellent4.setVisibility(View.VISIBLE);
         } else if (finalScore >= 5) {
-            textGood.setVisibility(View.VISIBLE);
-            imageGood.setVisibility(View.VISIBLE);
+            textGood4.setVisibility(View.VISIBLE);
+            imageGood4.setVisibility(View.VISIBLE);
         } else {
-            textBad.setVisibility(View.VISIBLE);
-            imageBad.setVisibility(View.VISIBLE);
+            textBad4.setVisibility(View.VISIBLE);
+            imageBad4.setVisibility(View.VISIBLE);
         }
     }
 

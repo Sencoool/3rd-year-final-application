@@ -124,7 +124,6 @@ public class TestUnit_4 extends AppCompatActivity implements View.OnClickListene
         return score;
     }
 
-
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btnNext4){

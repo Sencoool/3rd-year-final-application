@@ -5,24 +5,54 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_sum_score_unit5">
+    tools:context=".activity_sum_score_unit1">
 
     <TextView
-        android:id="@+id/textView104"
+        android:id="@+id/textGood5"
         android:layout_width="305dp"
         android:layout_height="295dp"
         android:background="@drawable/radius_and_backgroundtransparent"
         android:gravity="center"
-        android:text="เกือบได้เต็มแล้วนะ ลองแก้มือดูอีกครั้งไหม"
+        android:text="ได้คะแนนเยอะมากแล้วนะ ลองแก้มือดูอีกครั้งไหมเผื่อจะได้เต็ม"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView105"
+        android:id="@+id/textExcellent5"
+        android:layout_width="305dp"
+        android:layout_height="295dp"
+        android:background="@drawable/radius_and_backgroundtransparent"
+        android:gravity="center"
+        android:text="สุดยอดคุณได้คะแนนเต็ม !"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textBad5"
+        android:layout_width="305dp"
+        android:layout_height="295dp"
+        android:background="@drawable/radius_and_backgroundtransparent"
+        android:gravity="center"
+        android:text="ยังต้องฝึกอยู่อีกหน่อย ลองแก้มือดูอีกครั้งไหม"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:layout_width="411dp"
         android:layout_height="110dp"
         android:background="#FFC707"
@@ -34,7 +64,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView106"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="สรุปคะแนน"
@@ -66,7 +95,7 @@
         app:menu="@menu/bottom_navigation_item" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btnRetest5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
@@ -85,28 +114,59 @@
         app:layout_constraintVertical_bias="0.838" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/imageGood5"
         android:layout_width="156dp"
         android:layout_height="286dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77"
+        app:srcCompat="@drawable/good_score" />
+
+    <ImageButton
+        android:id="@+id/imageExcellent5"
+        android:layout_width="156dp"
+        android:layout_height="286dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.77"
         app:srcCompat="@drawable/pngwing_com" />
 
+    <ImageButton
+        android:id="@+id/imageBad5"
+        android:layout_width="156dp"
+        android:layout_height="286dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77"
+        app:srcCompat="@drawable/bad_score" />
+
     <TextView
-        android:id="@+id/textView107"
+        android:id="@+id/scoreView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="9/10"
         android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364" />
+        app:layout_constraintVertical_bias="0.384" />
 </androidx.constraintlayout.widget.ConstraintLayout>
